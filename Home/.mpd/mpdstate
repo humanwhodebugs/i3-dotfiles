@@ -1,0 +1,36 @@
+sw_volume: 100
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: play
+current: 5
+time: 120.007000
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:Citypop & 80s ~Parallel World~ Vol. 1/突然の雨.mp3
+1:Citypop & 80s ~Parallel World~ Vol. 1/寝坊のわたしに.mp3
+2:Citypop & 80s ~Parallel World~ Vol. 1/軍のためならば.mp3
+3:Citypop & 80s ~Parallel World~ Vol. 1/未完成.mp3
+4:Citypop & 80s ~Parallel World~ Vol. 1/海岸線ドライバー.mp3
+5:Citypop & 80s ~Parallel World~ Vol. 1/島の楽園.mp3
+6:Citypop & 80s ~Parallel World~ Vol. 1/パジャマの夜.mp3
+7:Citypop & 80s ~Parallel World~ Vol. 1/神秘的ね.mp3
+8:Citypop & 80s ~Parallel World~ Vol. 1/暑さで溶けそうなＳＵＭＭＥＲ.mp3
+9:Citypop & 80s ~Parallel World~ Vol. 1/探せＬＩＰＳＴＩＣＫ.mp3
+10:Citypop & 80s ~Parallel World~ Vol. 1/コンビニエンス・ナイト.mp3
+11:Citypop & 80s ~Parallel World~ Vol. 1/Ｖａｌｅｎｔｉｎｅ　Ｆｌｏｗｅｒ.mp3
+12:Citypop & 80s ~Parallel World~ Vol. 1/愛の旅列車.mp3
+13:Citypop & 80s ~Parallel World~ Vol. 1/眠りのビート.mp3
+14:Citypop & 80s ~Parallel World~ Vol. 1/ただの影.mp3
+15:Citypop & 80s ~Parallel World~ Vol. 1/Alone in the Rain.mp3
+16:Citypop & 80s ~Parallel World~ Vol. 1/omake/探せリップスティック (1982).mp3
+17:Citypop & 80s ~Parallel World~ Vol. 1/omake/SECRET NIGHTLIFE.mp3
+18:Citypop & 80s ~Parallel World~ Vol. 1/omake/アローン・イン・ザ・レーン (1976).mp3
+19:Citypop & 80s ~Parallel World~ Vol. 1/omake/匍匐恐怖.mp3
+20:Citypop & 80s ~Parallel World~ Vol. 1/omake/狙え！羽ばたく.mp3
+playlist_end
