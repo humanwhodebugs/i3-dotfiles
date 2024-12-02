@@ -12,7 +12,15 @@
 pacstrap -K /mnt base linux-firmware linux-lts (or linux-zen) base-devel git grub sudo nano intel-ucode thermald tlp networkmanager
 ```
 
-2. Enabling NetworkManager, ThermalD and TLP
+2. Enable multilib for 32bit Support
+
+```bash
+nano /etc/pacman.conf
+```
+
+Uncomment multilib section.
+
+3. Enabling NetworkManager, ThermalD and TLP
 
 ```bash
 systemctl enable NetworkManager
@@ -28,21 +36,7 @@ systemctl enable tlp
 
 ## After Minimal Install
 
-1. Install Starter Packages
-
-```bash
-sudo pacman -S vim ranger kitty sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio
-```
-
-```bash
-systemctl enable sddm
-```
-
-```bash
-systemctl start sddm
-```
-
-2. Install Paru
+1. Install Paru
 
 ```bash
 git clone https://aur.archlinux.org/org
@@ -56,10 +50,24 @@ cd paru
 makepkg -si
 ```
 
+2. Install Starter Packages
+
+```bash
+paru -S vim ranger kitty sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio
+```
+
+```bash
+systemctl enable sddm
+```
+
+```bash
+systemctl start sddm
+```
+
 3. Install Fonts
 
 ```bash
-sudo pacman -S sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd
+paru -S sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd
 ```
 
 4. Thunar File Manager Packages
