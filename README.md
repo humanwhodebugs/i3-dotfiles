@@ -4,10 +4,42 @@
 
 ## Getting Started
 
+## Packages Needed for My System
+
+1. Pacstrap
+
+```bash
+pacstrap -K /mnt base linux-firmware linux-lts (or linux-zen) base-devel git grub sudo nano intel-ucode thermald tlp networkmanager
+```
+
+2. Enabling NetworkManager, ThermalD and TLP
+
+```bash
+systemctl enable NetworkManager
+```
+
+```bash
+systemctl enable thermald
+```
+
+```bash
+systemctl enable tlp
+```
+
+## After Minimal Install
+
 1. Install Starter Packages
 
 ```bash
-sudo pacman -S vim ranger kitty sddm xorg firefox rofi polybar dunst
+sudo pacman -S vim ranger kitty sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio
+```
+
+```bash
+systemctl enable sddm
+```
+
+```bash
+systemctl start sddm
 ```
 
 2. Install Paru
@@ -48,7 +80,41 @@ paru -S qt6-svg qt6-declarative qt5-quickcontrols2
 paru -S maim xorg-xrandr xclip
 ```
 
-7. Edit TLP
+7. MPD and NCMPCPP
+
+```bash
+paru -S mpd ncmpcpp
+```
+
+```bash
+mkdir ~/.mpd
+```
+
+```bash
+cd ~/.mpd
+```
+
+```bash
+touch mpd.db mpd.log mpd.pid
+```
+
+```bash
+mpd
+```
+
+```bash
+systemctl start mpd
+```
+
+```bash
+systemctl enable mpd
+```
+
+```bash
+systemctl --user enable mpd
+```
+
+8. Edit TLP
 
 ```bash
 su vim /etc/tlp.conf
