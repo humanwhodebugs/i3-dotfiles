@@ -1,5 +1,5 @@
 <div align="center">
-<h3 align="center"><b>i3 WM</b> - Dotfiles for Arch Linux (ThinkPad X230i)</h3>
+<h1 align="center"><b>i3 WM</b> - Dotfiles for Arch Linux (ThinkPad X230i)</h1>
 </div>
 
 ## Getting Started
@@ -53,7 +53,7 @@ makepkg -si
 2. Install Starter Packages
 
 ```bash
-paru -S vim ranger kitty sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio
+paru -S vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch
 ```
 
 ```bash
@@ -73,7 +73,7 @@ paru -S sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-ext
 4. Thunar File Manager Packages
 
 ```bash
-paru -S thunar thunar-volman tumbler ffmpegthumbnailer file-roller thunar-archive-plugin gvfs gvfs-mtp android-tools android-udev
+paru -S thunar thunar-volman tumbler ffmpegthumbnailer file-roller thunar-archive-plugin gvfs gvfs-mtp android-tools android-udev mousepad gspell
 ```
 
 5. SDDM Dependencies
@@ -85,7 +85,7 @@ paru -S qt6-svg qt6-declarative qt5-quickcontrols2
 6. Screenshot Dependencies
 
 ```bash
-paru -S maim xorg-xrandr xclip
+paru -S maim xorg-xrandr xclip viewnior
 ```
 
 7. MPD and NCMPCPP
