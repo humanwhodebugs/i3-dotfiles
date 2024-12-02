@@ -27,3 +27,12 @@ sudo pacman -S sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fo
 ```bash
 thunar thunar-volman tumbler ffmpegthumbnailer file-roller thunar-archive-plugin gvfs gvfs-mtp android-tools android-udev
 ```
+
+## Screenshots
+
+<img src="./1.png" />
+<img src="./2.png" />
+<img src="./3.png" />
+<img src="./4.png" />
+<img src="./5.png" />
+<img src="./6.png" />
