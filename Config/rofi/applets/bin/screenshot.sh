@@ -34,11 +34,11 @@ fi
 # Options
 layout=`cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2`
 if [[ "$layout" == 'NO' ]]; then
-	option_1=" Capture Desktop"
-	option_2=" Capture Area"
-	option_3=" Capture Window"
-	option_4=" Capture in 5s"
-	option_5=" Capture in 10s"
+	option_1="Capture Desktop"
+	option_2="Capture Area"
+	option_3="Capture Window"
+	option_4="Capture in 5s"
+	option_5="Capture in 10s"
 else
 	option_1=""
 	option_2=""
@@ -67,7 +67,7 @@ run_rofi() {
 # Screenshot
 time=`date +%Y-%m-%d-%H-%M-%S`
 geometry=`xrandr | grep 'current' | head -n1 | cut -d',' -f2 | tr -d '[:blank:],current'`
-dir="/home/humanwhodebugs/Pictures/Screenshots"
+dir="/home/rei/Pictures/Screenshots"
 file="Screenshot_${time}_${geometry}.png"
 
 if [[ ! -d "$dir" ]]; then

@@ -25,6 +25,9 @@ exec_always --no-startup-id setxkbmap -layout jp
 # Start Polybar
 exec_always --no-startup-id killall -q polybar; polybar mybar
 
+# Take Screenshot
+bindsym $mod+Print exec ~/.config/rofi/applets/bin/screenshot.sh
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -125,14 +128,14 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:一"
-set $ws2 "2:二"
-set $ws3 "3:三"
-set $ws4 "4:四"
-set $ws5 "5:五"
-set $ws6 "6:六"
-set $ws7 "7:七"
-set $ws8 "8:八"
+set $ws1 "1:󰎤"
+set $ws2 "2:󰎧"
+set $ws3 "3:󰎪"
+set $ws4 "4:󰎭"
+set $ws5 "5:󰎱"
+set $ws6 "6:󰎳"
+set $ws7 "7:󰎶"
+set $ws8 "8:󰎹"
 set $ws9 "9:九"
 set $ws10 "10:十"
 
@@ -242,6 +245,9 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 # Border?
 default_border pixel 3
 
+# DPMS Manager
+exec --no-startup-id ~/.config/i3/dpms-manager.sh
+
 # Gaps Config
 gaps inner 5
 gaps outer 0
@@ -251,3 +257,7 @@ exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
 # Set Wallpaper
 exec --no-startup-id sh ~/.fehbg
+
+# Config for Lutris
+for_window [class="Lutris"] border pixel 3
+for_window [instance="net.lutris.Lutris"] border pixel 3
