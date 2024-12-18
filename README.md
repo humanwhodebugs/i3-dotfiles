@@ -67,7 +67,7 @@ systemctl start sddm
 3. Install Fonts
 
 ```bash
-paru -S sudo pacman -S noto-fonts noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd
+paru -S noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd
 ```
 
 4. Thunar File Manager Packages
@@ -85,7 +85,7 @@ paru -S qt6-svg qt6-declarative qt5-quickcontrols2
 6. Screenshot Dependencies
 
 ```bash
-paru -S maim xorg-xrandr xclip viewnior
+paru -S maim xclip viewnior
 ```
 
 7. MPD and NCMPCPP
@@ -125,7 +125,11 @@ systemctl --user enable mpd
 8. Edit TLP
 
 ```bash
-su vim /etc/tlp.conf
+su
+```
+
+```bash
+vim /etc/tlp.conf
 ```
 
 Change and uncomment battery and AC mode.

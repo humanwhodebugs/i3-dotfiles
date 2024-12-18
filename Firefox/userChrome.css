@@ -1,0 +1,43 @@
+/* Mengubah warna background utama di area sekitar tab */
+#navigator-toolbox {
+    background-color: #1e1e2e !important; /* Ganti dengan warna yang Anda inginkan */
+}
+
+#titlebar {
+    background-color: #1e1e2e !important; /* Ganti dengan warna sesuai kebutuhan */
+}
+
+/* Menghilangkan border atau garis separator */
+#navigator-toolbox {
+    border-bottom: none !important;
+}
+
+/* Mengganti warna toolbar atas */
+#TabsToolbar {
+    background-color: #1E1E2E !important; /* Ganti dengan kode warna yang diinginkan */
+    color: #FFFFFF !important; /* Ganti warna teks jika diperlukan */
+    border-bottom: none !important;
+}
+
+/* Mengganti warna navigasi (toolbar utama) */
+#nav-bar {
+    background-color: #1E1E2E !important; /* Ganti dengan warna yang sama atau berbeda */
+    border-top: none !important;
+}
+
+/* Mengubah warna background search bar */
+#urlbar {
+    background-color: #1E1E2E !important; /* Warna latar belakang */
+    color: #FFFFFF !important; /* Warna teks */
+    border: none !important; /* Hilangkan border */
+}
+
+/* Mengubah warna teks placeholder di search bar */
+#urlbar::placeholder {
+    color: #AAAAAA !important; /* Warna teks placeholder */
+}
+
+/* Mengubah warna outline saat search bar aktif */
+#urlbar:focus {
+    outline: 2px solid #FF79C6 !important; /* Warna outline fokus */
+}
