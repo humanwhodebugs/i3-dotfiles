@@ -251,6 +251,7 @@ exec --no-startup-id ~/.config/i3/dpms-manager.sh
 # Gaps Config
 gaps inner 5
 gaps outer 0
+gaps top 35
 
 # Picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
