@@ -47,10 +47,12 @@ forward-button {
 }
 
 #navigator-toolbox {
+  background-color: #1E1E2E !important;
   border-bottom: var(--border-width) !important;
 }
 
 #nav-bar {
+  background-color: #1E1E2E !important;
   margin: 8px 8px 2px;
   padding: 4px !important;
   border-top: var(--border-width) !important;
