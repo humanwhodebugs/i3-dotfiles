@@ -16,7 +16,7 @@
 
 /* customize things here */
 :root {
-	--font: 'DaddyTimeMono Nerd Font Mono'; /* UI font name. it must be installed on your system. */
+	--font: 'Cascadia Code NF'; /* UI font name. it must be installed on your system. */
 	letter-spacing: -0.05ch; /* decreases letter spacing for better readability. */
 	font-weight: 300; /* UI font weight. */
 	--label-font-weight: 500; /* font weight for panel labels. */
@@ -52,7 +52,7 @@
 	/* borders */
 	--border-width: 2px; /* panel border thickness. */
 	--border-color: var(--bg-2); /* panel border color. */
-	--border-hover-color: var(--acc-0); /* panel border color when hovered. */
+	--border-hover-color: var(--pink); /* panel border color when hovered. */
 	--border-transition: 0.2s ease; /* panel border transition. */
 
 	/* status dot colors */
@@ -70,7 +70,7 @@
 	--reply-hover-overlay: var(--hover); /* overlay color of message you are replying to when hovered. */
 
 	/* color shades */
-	--pink: #f38ba8;
+	--pink: #f5c2e7;
 	--pink-1: #d16c89;
 	--pink-2: #af4e6c;
 	--purple: #cba6f7;
