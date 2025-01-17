@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "DaddyTimeMono Nerd Font 10";
+    font: "Cascadia Code NF 10";
 }
