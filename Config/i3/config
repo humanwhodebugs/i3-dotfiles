@@ -256,6 +256,9 @@ gaps top 35
 # Picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
 
+# mpDris2
+exec --no-startup-id mpDris2
+
 # Set Wallpaper
 exec --no-startup-id sh ~/.fehbg
 

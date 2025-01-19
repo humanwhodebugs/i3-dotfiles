@@ -88,10 +88,10 @@ paru -S qt6-svg qt6-declarative qt5-quickcontrols2
 paru -S maim xclip viewnior
 ```
 
-7. MPD and NCMPCPP
+7. Fum, MPD, mpDris2, Lollypop, NCMPCPP and playerctl
 
 ```bash
-paru -S mpd ncmpcpp
+paru -S fum mpd mpdris2 lollypop ncmpcpp playerctl
 ```
 
 ```bash
