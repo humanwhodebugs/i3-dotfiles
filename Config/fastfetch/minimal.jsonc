@@ -17,6 +17,11 @@
         {
             "type": "os",
             "key": "OS  ",
+            "keyColor": "30",  // = color1
+        },
+        {
+            "type": "host",
+            "key": "HOST",
             "keyColor": "31",  // = color1
         },
         {
