@@ -111,6 +111,8 @@ alias icat="kitten icat --scale-up"
 alias icatgif="kitty +kitten icat --transfer-mode file ~/Pictures/Frieren/Frieren.gif"
 alias setwal="feh --bg-fill"
 alias scrcpynovid="scrcpy --no-control --no-video"
+alias syu="paru -Syu"
+alias syy="paru -Syy"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

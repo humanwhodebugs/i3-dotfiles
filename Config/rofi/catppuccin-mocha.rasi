@@ -9,7 +9,7 @@
     grey: #6c7086;
 
     width: 600;
-    font: "Cascadia Code NF 14";
+    font: "Agave Nerd Font 12";
 }
 
 element-text, element-icon , mode-switcher {
@@ -71,7 +71,7 @@ element {
 }
 
 element-icon {
-    size: 25px;
+    size: 15px;
 }
 
 element selected {

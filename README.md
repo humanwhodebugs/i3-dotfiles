@@ -53,7 +53,7 @@ makepkg -si
 2. Install Starter Packages
 
 ```bash
-paru -S i3-wm vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch cheese zathura zathura-pdf-poppler
+paru -S i3-wm vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch cheese zathura zathura-pdf-poppler papirus-folders-catppuccin-git
 ```
 
 ```bash
@@ -67,7 +67,7 @@ systemctl start sddm
 3. Install Fonts
 
 ```bash
-paru -S noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd
+paru -S noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-agave ttf-agave-nerd
 ```
 
 4. Thunar File Manager Packages
@@ -143,6 +143,11 @@ Restart TLP
 
 ```bash
 systemctl restart tlp
+```
+
+9. Change Folder Icons
+```bash
+papirus-folders -t Papirus -C cat-mocha-pink
 ```
 
 ## Screenshots
