@@ -24,7 +24,6 @@
           ]
         },
         { "type": "empty", "size": 1 },
-        { "type": "progress", "progress": "󰝤", "empty": "-" },
         {
           "type": "container",
           "height": 1,
