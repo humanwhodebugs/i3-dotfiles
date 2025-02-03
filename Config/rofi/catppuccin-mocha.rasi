@@ -9,7 +9,7 @@
     grey: #6c7086;
 
     width: 600;
-    font: "Agave Nerd Font 12";
+    font: "Maple Mono 12";
 }
 
 element-text, element-icon , mode-switcher {

@@ -39,7 +39,7 @@ systemctl enable tlp
 1. Install Paru
 
 ```bash
-git clone https://aur.archlinux.org/org
+git clone https://aur.archlinux.org/paru.git
 ```
 
 ```bash
@@ -67,7 +67,7 @@ systemctl start sddm
 3. Install Fonts
 
 ```bash
-paru -S noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-agave ttf-agave-nerd
+paru -S noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-maple-beta
 ```
 
 4. Thunar File Manager Packages
@@ -146,6 +146,7 @@ systemctl restart tlp
 ```
 
 9. Change Folder Icons
+
 ```bash
 papirus-folders -t Papirus -C cat-mocha-pink
 ```

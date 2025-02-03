@@ -104,6 +104,7 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cpugovernor="cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
 alias download_album="yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --write-info-json --write-thumbnail"
+alias download_vid="yt-dlp -f 'bestvideo[height=720]+bestaudio' --merge-output-format mp4"
 alias ffarch="fastfetch --config ~/.config/fastfetch/arch.jsonc"
 alias ffmin="fastfetch --config ~/.config/fastfetch/minimal.jsonc"
 alias ffos="fastfetch --config ~/.config/fastfetch/os.jsonc"
