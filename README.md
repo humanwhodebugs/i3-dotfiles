@@ -53,7 +53,7 @@ makepkg -si
 2. Install Starter Packages
 
 ```bash
-paru -S i3-wm vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch cheese zathura zathura-pdf-poppler papirus-folders-catppuccin-git
+paru -S i3-wm vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch cheese zathura zathura-pdf-poppler papirus-folders-catppuccin-git nwg-look
 ```
 
 ```bash
@@ -67,13 +67,13 @@ systemctl start sddm
 3. Install Fonts
 
 ```bash
-paru -S noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-maple-beta
+paru -S noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-maple-beta
 ```
 
 4. Thunar File Manager Packages
 
 ```bash
-paru -S thunar thunar-volman tumbler ffmpegthumbnailer file-roller thunar-archive-plugin gvfs gvfs-mtp android-tools android-udev mousepad p7zip unrar
+paru -S thunar thunar-volman tumbler ffmpegthumbnailer file-roller thunar-archive-plugin gvfs gvfs-mtp android-tools android-udev mousepad p7zip unrar unzip
 ```
 
 5. SDDM Dependencies
@@ -88,10 +88,10 @@ paru -S qt6-svg qt6-declarative qt5-quickcontrols2
 paru -S maim xclip viewnior
 ```
 
-7. Fum, MPD, mpDris2, Lollypop, NCMPCPP and playerctl
+7. Fum, Lollypop, MPD and NCMPCPP
 
 ```bash
-paru -S fum mpd mpdris2 lollypop ncmpcpp playerctl
+paru -S fum-bin mpd lollypop ncmpcpp
 ```
 
 ```bash
