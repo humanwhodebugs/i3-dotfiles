@@ -1,58 +1,64 @@
-% egrep -v '^#' ~/.ncmpcpp/config
-mpd_music_dir = "~/Music/"
-visualizer_in_stereo = "yes"
-visualizer_data_source = "/tmp/mpd.fifo"
-visualizer_output_name = "my_fifo"
-progressbar_look = "━━╸"
-#visualizer_sync_interval = "30"
+mpd_host = "127.0.0.1"
+mpd_port = 6601
+mpd_connection_timeout = "5"  
+mpd_crossfade_time = "5"
+mpd_music_dir = ~/Music
 
-visualizer_type = "spectrum"
-#visualizer_type = "wave"
-#visualizer_type = "wave_filled"
-#visualizer_type = "ellipse"
+visualizer_data_source = /tmp/mpd.fifo
+visualizer_output_name = my_fifo
 
-visualizer_look = "◆▋"
-#visualizer_look = "+|"
-#visualizer_look = "●●"
+visualizer_in_stereo = "no"
+visualizer_fps = "60"
+visualizer_type = wave
+visualizer_look = "┃┃"
+visualizer_color = blue, green, yellow, magenta, red
 
-message_delay_time = "3"
+visualizer_spectrum_smooth_look = "no"
+
+# General
+connected_message_on_startup = "yes"
+cyclic_scrolling = "yes"
+mouse_support = "yes"
+mouse_list_scroll_whole_page = "yes"
+lines_scrolled = "1"
+message_delay_time = "1"
 playlist_shorten_total_times = "yes"
-playlist_display_mode = "columns"
-browser_display_mode = "columns"
-search_engine_display_mode = "columns"
-playlist_editor_display_mode = "columns"
+playlist_display_mode = "classic"
+browser_display_mode = "classic"
+search_engine_display_mode = "classic"
+playlist_editor_display_mode = "classic"
 autocenter_mode = "yes"
 centered_cursor = "yes"
 user_interface = "classic"
 follow_now_playing_lyrics = "yes"
-locked_screen_width_part = "60"
-display_bitrate = "yes"
-external_editor = "vim"
-use_console_editor = "yes"
-header_window_color = "magenta"
-volume_color = "magenta"
-state_line_color = "magenta"
-state_flags_color = "magenta"
-progressbar_color = "magenta"
-statusbar_color = "magenta"
-visualizer_color = "magenta" #magenta #cyan #green #red #blue
+locked_screen_width_part = "50"
+ask_for_locked_screen_width_part = "no"
+display_bitrate = "no"
+external_editor = "nvim"
+main_window_color = "default"
+startup_screen = "playlist"
+seek_time = 5
 
-#Personal Config
-
-empty_tag_color = "magenta"
-main_window_color = "magenta"
-color1 = "magenta"
-color2 = "magenta"
+# Progress bar
+progressbar_look = "━●━"
 progressbar_elapsed_color = "magenta"
-statusbar_time_color = "magenta"
-player_state_color = "magenta"
-alternative_ui_separator_color = "magenta"
-active_window_border = "magenta"
 
-mpd_host = "127.0.0.1"
-mpd_port = "6601"
-mouse_list_scroll_whole_page = "yes"
-lines_scrolled = "1"
-#ask_before_clearing_main_playlist = "yes"
+# UI Visibility
+header_visibility = "no"
+statusbar_visibility = "yes"
+titles_visibility = "yes"
 enable_window_title = "yes"
-song_columns_list_format = "(25)[magenta]{a} (40)[magenta]{f} (30)[magenta]{b} (7f)[magenta]{l}"
+clock_display_seconds = no
+
+# Colors
+color1 = "white"
+color2 = "blue"
+
+# UI Appearance
+now_playing_prefix = "$b$6× "
+now_playing_suffix = "$/b$9"
+current_item_prefix = "$b$6- "
+song_list_format = "{%t}|{%f}$R {%a | %l}"
+song_status_format = {%a - %t}|{%f}
+song_library_format = {{%a - %t} (%b)}|{%f}
+
