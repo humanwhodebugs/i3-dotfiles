@@ -4,7 +4,7 @@ set -e # Stop script if there's an error
 
 echo "Welcome to Rei's dotfiles installer!"
 
-# Check if paru were installed
+# Check if paru is installed
 if ! command -v paru &>/dev/null; then
   echo "Error: paru is not installed. Please install paru first."
   exit 1
