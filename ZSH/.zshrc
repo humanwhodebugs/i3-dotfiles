@@ -102,19 +102,29 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias cl="clear"
 alias cpugovernor="cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
 alias download_album="yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --write-info-json --write-thumbnail"
 alias download_vid="yt-dlp -f 'bestvideo[height=720]+bestaudio' --merge-output-format mp4"
+alias ff="fastfetch"
 alias ffarch="fastfetch --config ~/.config/fastfetch/arch.jsonc"
 alias ffmin="fastfetch --config ~/.config/fastfetch/minimal.jsonc"
 alias ffos="fastfetch --config ~/.config/fastfetch/os.jsonc"
 alias icat="kitten icat --scale-up"
 alias icatgif="kitty +kitten icat --transfer-mode file ~/Pictures/Frieren/Frieren.gif"
+alias lg="lazygit"
 alias nc="ncmpcpp"
+alias nv="nvim"
 alias setwal="feh --bg-fill"
+alias scrhd='sh -c "n=1; while [[ -e ~/Videos/screen-recording-\$n.mkv ]]; do ((n++)); done; echo \"Starting recording in 3 seconds...\"; sleep 3; gpu-screen-recorder -w screen -c mkv -s 1366x768 -f 30 -bm qp -q very_high -k h264 -ac opus -a default_output -cursor no -keyint 2 -encoder cpu -o ~/Videos/screen-recording-\$n.mkv"'
+alias scrmd='sh -c "n=1; while [[ -e ~/Videos/screen-recording-\$n.mkv ]]; do ((n++)); done; echo \"Starting recording in 3 seconds...\"; sleep 3; gpu-screen-recorder -w screen -c mkv -s 1366x768 -f 30 -bm qp -q high -k h264 -ac opus -a default_output -cursor no -keyint 2 -encoder cpu -o ~/Videos/screen-recording-\$n.mkv"'
 alias scrcpynovid="scrcpy --no-control --no-video"
 alias syu="paru -Syu"
 alias syy="paru -Syy"
+alias tm="tmux"
+alias tmks="tmux kill-server"
+alias tmls="tmux ls"
+alias x="exit"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm

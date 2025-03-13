@@ -44,8 +44,8 @@
             "type": "shell"
         },
         {
-            "key": "│ {#36}󰇄 desktop {#keys}│",
-            "type": "wm"
+            "key": "│ {#36}󰍛 memory  {#keys}│",
+            "type": "memory"
         },
         {
             "key": "╰───────────╯",
