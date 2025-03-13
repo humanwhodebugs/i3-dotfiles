@@ -1,14 +1,8 @@
 #!/bin/bash
 
-set -e # Stop script if there's an error
+set -eu # Stop script if there's an error
 
 echo "Welcome to Rei's dotfiles installer!"
-
-# Check if paru is installed
-if ! command -v paru &>/dev/null; then
-  echo "Error: paru is not installed. Please install paru first."
-  exit 1
-fi
 
 # Function for installation
 install_packages() {
@@ -30,19 +24,14 @@ install_packages "Thunar Packages" thunar thunar-volman tumbler ffmpegthumbnaile
 echo "4. Installing SDDM Dependencies..."
 install_packages "SDDM Dependencies" qt6-svg qt6-declarative qt5-quickcontrols2
 
-echo "5. Installing Screenshot Dependencies..."
-install_packages "Screenshot Dependencies" maim xclip viewnior
+echo "5. Installing Screenshot and Screenrecord Dependencies..."
+install_packages "Screenshot Dependencies" maim xclip viewnior gpu-screen-recorder
 
 echo "6. Installing MPD and NCMPCPP..."
 install_packages "MPD and NCMPCPP" mpd ncmpcpp
 
 echo "Installation process completed successfully!"
 
-echo "7. Enabling and Starting SDDM..."
-if [ "$EUID" -ne 0 ]; then
-  echo "Error: Please run this script as root to enable and start SDDM."
-  exit 1
-fi
-
-systemctl enable sddm
-systemctl start sddm
+echo "Enabling and starting SDDM..."
+sudo systemctl enable sddm
+sudo systemctl start sddm

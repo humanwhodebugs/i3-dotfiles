@@ -1,12 +1,6 @@
 #!/bin/bash
 
-set -e # Stop script if there's an error
-
-# Check if paru is installed
-if ! command -v paru &>/dev/null; then
-  echo "Error: paru is not installed. Please install paru first."
-  exit 1
-fi
+set -eu # Stop script if there's an error
 
 # Function for installation
 install_packages() {
