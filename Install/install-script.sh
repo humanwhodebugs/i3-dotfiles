@@ -28,7 +28,7 @@ echo "5. Installing Screenshot and Screenrecord Dependencies..."
 install_packages "Screenshot Dependencies" maim xclip viewnior gpu-screen-recorder
 
 echo "6. Installing MPD and NCMPCPP..."
-install_packages "MPD and NCMPCPP" mpd ncmpcpp
+install_packages "MPD and NCMPCPP" mpd ncmpcpp mpc
 
 echo "Installation process completed successfully!"
 
