@@ -50,49 +50,31 @@ cd paru
 makepkg -si
 ```
 
-2. Install Starter Packages
+2. Execute Install Script
+
+Change to clone directory.
 
 ```bash
-paru -S i3-wm vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch cheese zathura zathura-pdf-poppler papirus-folders-catppuccin-git nwg-look
+chmod +x install-script.sh
 ```
 
 ```bash
-systemctl enable sddm
+./install-script.sh
+```
+
+3. Execute After Install Script
+
+Change to clone directory.
+
+```bash
+chmod +x after-install.sh
 ```
 
 ```bash
-systemctl start sddm
+./after-install.sh
 ```
 
-3. Install Fonts
-
-```bash
-paru -S noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-maple-beta
-```
-
-4. Thunar File Manager Packages
-
-```bash
-paru -S thunar thunar-volman tumbler ffmpegthumbnailer file-roller thunar-archive-plugin gvfs gvfs-mtp android-tools android-udev mousepad p7zip unrar unzip
-```
-
-5. SDDM Dependencies
-
-```bash
-paru -S qt6-svg qt6-declarative qt5-quickcontrols2
-```
-
-6. Screenshot Dependencies
-
-```bash
-paru -S maim xclip viewnior
-```
-
-7. Fum, Lollypop, MPD and NCMPCPP
-
-```bash
-paru -S fum-bin mpd lollypop ncmpcpp
-```
+4. MPC, MPD and NCMPCPP Setup
 
 ```bash
 mkdir ~/.mpd
@@ -122,7 +104,7 @@ systemctl enable mpd
 systemctl --user enable mpd
 ```
 
-8. Edit TLP
+5. Edit TLP
 
 ```bash
 su
@@ -145,17 +127,10 @@ Restart TLP
 systemctl restart tlp
 ```
 
-9. Change Folder Icons
+6. Change Folder Icons
 
 ```bash
 papirus-folders -t Papirus -C cat-mocha-pink
 ```
 
 ## Screenshots
-
-<img src="./1.png" />
-<img src="./2.png" />
-<img src="./3.png" />
-<img src="./4.png" />
-<img src="./5.png" />
-<img src="./6.png" />
