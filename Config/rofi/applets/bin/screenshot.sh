@@ -72,12 +72,12 @@ fi
 # notify and view screenshot
 notify_view() {
   notify_cmd_shot='dunstify'
-  ${notify_cmd_shot} "Copied to clipboard."
+  ${notify_cmd_shot} -t 2000 "Copied to clipboard."
   viewnior ${dir}/"$file"
   if [[ -e "$dir/$file" ]]; then
-    ${notify_cmd_shot} "Screenshot Saved."
+    ${notify_cmd_shot} -t 2000 "Screenshot Saved."
   else
-    ${notify_cmd_shot} "Screenshot Deleted."
+    ${notify_cmd_shot} -t 2000 "Screenshot Deleted."
   fi
 }
 
