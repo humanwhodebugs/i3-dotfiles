@@ -116,9 +116,6 @@ alias lg="lazygit"
 alias nc="ncmpcpp"
 alias nv="nvim"
 alias setwal="feh --bg-fill"
-alias scrhd='sh -c "n=1; while [[ -e ~/Videos/screen-recording-\$n.mp4 ]]; do ((n++)); done; echo \"Starting recording in 3 seconds...\"; sleep 3; gpu-screen-recorder -w screen -c mp4 -s 1366x768 -f 30 -bm qp -q very_high -k h264 -ac opus -a default_output -cursor no -keyint 2 -encoder cpu -o ~/Videos/screen-recording-\$n.mp4"'
-alias scrmd='sh -c "n=1; while [[ -e ~/Videos/screen-recording-\$n.mp4 ]]; do ((n++)); done; echo \"Starting recording in 3 seconds...\"; sleep 3; gpu-screen-recorder -w screen -c mp4 -s 1366x768 -f 30 -bm qp -q high -k h264 -ac opus -a default_output -cursor no -keyint 2 -encoder cpu -o ~/Videos/screen-recording-\$n.mp4"'
-alias scrcpynovid="scrcpy --no-control --no-video"
 alias syu="paru -Syu"
 alias syy="paru -Syy"
 alias tm="tmux"
