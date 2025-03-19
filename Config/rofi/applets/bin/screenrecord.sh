@@ -47,15 +47,19 @@ start_recording() {
   n=1
   while [[ -e "$HOME/Videos/Screenrecords/screen-recording-$n.mp4" ]]; do ((n++)); done
   gpu-screen-recorder -w screen -c mp4 -s 1366x768 -f 30 -bm qp -q very_high -k h264 -ac opus -a default_output -cursor no -keyint 2 -encoder cpu -o "$HOME/Videos/Screenrecords/screen-recording-$n.mp4" &
+  echo $! >/tmp/screen_recording.pid
   notify-send -t 2000 "Screen Recorder" "Recording started: screen-recording-$n.mp4"
 }
 
 # Stop Recording
 stop_recording() {
-  if pgrep gpu-screen-recorder >/dev/null; then
-    killall -SIGINT gpu-screen-recorder
+  if [[ -f /tmp/screen_recording.pid ]]; then
+    PID=$(cat /tmp/screen_recording.pid)
+    kill -SIGINT $PID
+    rm /tmp/screen_recording.pid
 
     latest_recording=$(ls -t "$HOME/Videos/Screenrecords/"screen-recording-*.mp4 | head -n 1)
+
     notify-send -t 2000 "Screen Recorder" "Recording stopped.\nSaved to: $latest_recording"
   else
     notify-send -t 2000 "Screen Recorder" "No active recording found."

@@ -20,11 +20,11 @@ else
     prompt="Music Player"
     mesg="No Music Playing - Stopped"
   elif [[ "$status" == *"[paused]"* ]]; then
-    prompt="$(mpc -f "%artist%" current)"
-    mesg="$(mpc -f "%title%" current) - Paused"
+    prompt="Music Player"
+    mesg="$(mpc -f "%artist%" current) - $(mpc -f "%title%" current) - Paused"
   else
-    prompt="$(mpc -f "%artist%" current)"
-    mesg="$(mpc -f "%title%" current) - $(mpc status | grep "#" | awk '{print $3}')"
+    prompt="Music Player"
+    mesg="$(mpc -f "%artist%" current) - $(mpc -f "%title%" current) - $(mpc status | grep "#" | awk '{print $3}')"
   fi
 fi
 
@@ -105,12 +105,18 @@ run_rofi() {
 run_cmd() {
   if [[ "$1" == '--opt1' ]]; then
     status=$(mpc status)
+    current_song=$(mpc current)
+
     if [[ "$status" == *"[playing]"* ]]; then
       mpc -q pause
       notify-send -t 2000 "Paused" "$(mpc current)"
     else
       mpc -q play
-      notify-send -t 2000 "Resumed" "$(mpc current)"
+      if [[ "$status" == *"[paused]"* ]]; then
+        notify-send -t 2000 "Resumed" "$(mpc current)"
+      else
+        notify-send -t 2000 "Now Playing" "$(mpc current)"
+      fi
     fi
   elif [[ "$1" == '--opt2' ]]; then
     mpc -q stop
