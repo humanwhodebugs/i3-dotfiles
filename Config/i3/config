@@ -15,8 +15,14 @@ exec_always --no-startup-id setxkbmap -layout jp
 # Start Polybar
 exec_always --no-startup-id killall -q polybar; polybar mybar
 
-# Take Screenshot
+# Music Applet
+bindsym $mod+Shift+m exec --no-startup-id ~/.config/rofi/applets/bin/mpd.sh
+
+# Screenshot applet
 bindsym $mod+Print exec ~/.config/rofi/applets/bin/screenshot.sh
+
+# Screenrecorder Applet
+bindsym $mod+Shift+Print exec ~/.config/rofi/applets/bin/screenrecord.sh
 
 # Start XDG Autostart .desktop Files Using Dex. See Also
 exec --no-startup-id dex --autostart --environment i3

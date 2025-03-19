@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+export MPD_HOST="127.0.0.1"
+export MPD_PORT="6601"
+
 # Import Current Theme
 source "$HOME"/.config/rofi/applets/shared/theme.bash
 theme="$type/$style"
@@ -15,8 +18,8 @@ else
 fi
 
 if [[ ("$theme" == *'type-1'*) || ("$theme" == *'type-3'*) || ("$theme" == *'type-5'*) ]]; then
-  list_col='1'
-  list_row='6'
+  list_col='6'
+  list_row='1'
 elif [[ ("$theme" == *'type-2'*) || ("$theme" == *'type-4'*) ]]; then
   list_col='6'
   list_row='1'
@@ -26,15 +29,15 @@ fi
 layout=$(cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2)
 if [[ "$layout" == 'NO' ]]; then
   if [[ ${status} == *"[playing]"* ]]; then
-    option_1=" Pause"
+    option_1="⏸"
   else
-    option_1=" Play"
+    option_1="▶"
   fi
-  option_2=" Stop"
-  option_3=" Previous"
-  option_4=" Next"
-  option_5=" Repeat"
-  option_6=" Random"
+  option_2="⏹"
+  option_3="⏮"
+  option_4="⏭"
+  option_5="⇄"
+  option_6="⟳"
 else
   if [[ ${status} == *"[playing]"* ]]; then
     option_1=""
@@ -88,13 +91,13 @@ run_rofi() {
 # Execute Command
 run_cmd() {
   if [[ "$1" == '--opt1' ]]; then
-    mpc -q toggle && notify-send -u low -t 1000 " $(mpc current)"
+    mpc -q toggle && notify-send -t 2000 "Now Playing" "$(mpc current)"
   elif [[ "$1" == '--opt2' ]]; then
     mpc -q stop
   elif [[ "$1" == '--opt3' ]]; then
-    mpc -q prev && notify-send -u low -t 1000 " $(mpc current)"
+    mpc -q prev && notify-send -t 2000 "Now Playing" "$(mpc current)"
   elif [[ "$1" == '--opt4' ]]; then
-    mpc -q next && notify-send -u low -t 1000 " $(mpc current)"
+    mpc -q next && notify-send -t 2000 "Now Playing" "$(mpc current)"
   elif [[ "$1" == '--opt5' ]]; then
     mpc -q repeat
   elif [[ "$1" == '--opt6' ]]; then
