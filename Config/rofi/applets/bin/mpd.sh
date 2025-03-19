@@ -8,18 +8,29 @@ source "$HOME"/.config/rofi/applets/shared/theme.bash
 theme="$type/$style"
 
 # Theme Elements
+
 status="$(mpc status)"
+current_song="$(mpc current)"
+
 if [[ -z "$status" ]]; then
   prompt='Offline'
   mesg="MPD is Offline"
 else
-  prompt="$(mpc -f "%artist%" current)"
-  mesg="$(mpc -f "%title%" current) :: $(mpc status | grep "#" | awk '{print $3}')"
+  if [[ -z "$current_song" ]]; then
+    prompt="Music Player"
+    mesg="No Music Playing - Stopped"
+  elif [[ "$status" == *"[paused]"* ]]; then
+    prompt="$(mpc -f "%artist%" current)"
+    mesg="$(mpc -f "%title%" current) - Paused"
+  else
+    prompt="$(mpc -f "%artist%" current)"
+    mesg="$(mpc -f "%title%" current) - $(mpc status | grep "#" | awk '{print $3}')"
+  fi
 fi
 
 if [[ ("$theme" == *'type-1'*) || ("$theme" == *'type-3'*) || ("$theme" == *'type-5'*) ]]; then
-  list_col='6'
-  list_row='1'
+  list_col='3'
+  list_row='2'
 elif [[ ("$theme" == *'type-2'*) || ("$theme" == *'type-4'*) ]]; then
   list_col='6'
   list_row='1'
@@ -29,15 +40,17 @@ fi
 layout=$(cat ${theme} | grep 'USE_ICON' | cut -d'=' -f2)
 if [[ "$layout" == 'NO' ]]; then
   if [[ ${status} == *"[playing]"* ]]; then
-    option_1="⏸"
+    option_1="Pause"
+  elif [[ ${status} == *"[paused]"* ]]; then
+    option_1="Resume"
   else
-    option_1="▶"
+    option_1="Play"
   fi
-  option_2="⏹"
-  option_3="⏮"
-  option_4="⏭"
-  option_5="⇄"
-  option_6="⟳"
+  option_2="Stop"
+  option_3="Previous"
+  option_4="Next"
+  option_5="Shuffle"
+  option_6="Repeat"
 else
   if [[ ${status} == *"[playing]"* ]]; then
     option_1=""
@@ -91,13 +104,23 @@ run_rofi() {
 # Execute Command
 run_cmd() {
   if [[ "$1" == '--opt1' ]]; then
-    mpc -q toggle && notify-send -t 2000 "Now Playing" "$(mpc current)"
+    status=$(mpc status)
+    if [[ "$status" == *"[playing]"* ]]; then
+      mpc -q pause
+      notify-send -t 2000 "Paused" "$(mpc current)"
+    else
+      mpc -q play
+      notify-send -t 2000 "Resumed" "$(mpc current)"
+    fi
   elif [[ "$1" == '--opt2' ]]; then
     mpc -q stop
+    notify-send -t 2000 "Stopped" "Music has been stopped"
   elif [[ "$1" == '--opt3' ]]; then
-    mpc -q prev && notify-send -t 2000 "Now Playing" "$(mpc current)"
+    mpc -q prev
+    notify-send -t 2000 "Now Playing" "$(mpc current)"
   elif [[ "$1" == '--opt4' ]]; then
-    mpc -q next && notify-send -t 2000 "Now Playing" "$(mpc current)"
+    mpc -q next
+    notify-send -t 2000 "Now Playing" "$(mpc current)"
   elif [[ "$1" == '--opt5' ]]; then
     mpc -q repeat
   elif [[ "$1" == '--opt6' ]]; then
