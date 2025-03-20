@@ -18,13 +18,13 @@ if [[ -z "$status" ]]; then
 else
   if [[ -z "$current_song" ]]; then
     prompt="Music Player"
-    mesg="No Music Playing - Stopped"
+    mesg="No Music Playing"
   elif [[ "$status" == *"[paused]"* ]]; then
     prompt="Music Player"
-    mesg="$(mpc -f "%artist%" current) - $(mpc -f "%title%" current) - Paused"
+    mesg="$(mpc -f "%artist%" current) - $(mpc -f "%title%" current)"
   else
     prompt="Music Player"
-    mesg="$(mpc -f "%artist%" current) - $(mpc -f "%title%" current) - $(mpc status | grep "#" | awk '{print $3}')"
+    mesg="$(mpc -f "%artist%" current) - $(mpc -f "%title%" current)"
   fi
 fi
 
@@ -49,8 +49,8 @@ if [[ "$layout" == 'NO' ]]; then
   option_2="Stop"
   option_3="Previous"
   option_4="Next"
-  option_5="Shuffle"
-  option_6="Repeat"
+  option_5="Repeat"
+  option_6="Shuffle"
 else
   if [[ ${status} == *"[playing]"* ]]; then
     option_1=""
