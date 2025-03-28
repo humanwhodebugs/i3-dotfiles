@@ -108,7 +108,9 @@ alias download_album="yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-met
 alias download_vid="yt-dlp -f 'bestvideo[height=720]+bestaudio' --merge-output-format mp4"
 alias ff="fastfetch"
 alias ffarch="fastfetch --config ~/.config/fastfetch/arch.jsonc"
+alias ff-full="fastfetch --config ~/.config/fastfetch/groups.jsonc"
 alias ffmin="fastfetch --config ~/.config/fastfetch/minimal.jsonc"
+alias ffmini="fastfetch --config ~/.config/fastfetch/mini.jsonc"
 alias ffos="fastfetch --config ~/.config/fastfetch/os.jsonc"
 alias icat="kitten icat --scale-up"
 alias icatgif="kitty +kitten icat --transfer-mode file ~/Pictures/Frieren/Frieren.gif"
@@ -126,3 +128,31 @@ alias x="exit"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# Huh?
+embed_cover() {
+    cover=$(ls *.jpg | head -n 1)  # Ambil gambar JPG pertama di folder
+    if [ -z "$cover" ]; then
+        echo "❌ Tidak ditemukan file cover.jpg atau gambar lainnya!"
+        return 1
+    fi
+
+    for file in *.mp3; do
+        new_file="new_$file"  # Buat nama baru dengan prefix "new_"
+
+        ffmpeg -i "$file" -i "$cover" -map 0:a -map 1:v -c:v mjpeg \
+            -metadata:s:v title="Album Art" -metadata:s:v comment="Cover (front)" \
+            -c:a copy "$new_file"
+
+        if [ $? -eq 0 ]; then  # Jika ffmpeg sukses
+            rm "$file"  # Hapus file lama
+            mv "$new_file" "$file"  # Ubah nama file baru agar tetap sama dengan yang lama
+            echo "✅ Berhasil menambahkan cover ke: $file"
+        else
+            echo "❌ Gagal memproses: $file"
+        fi
+    done
+
+    echo "🎵 Selesai! Semua lagu sekarang memiliki cover album."
+}

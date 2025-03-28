@@ -1,0 +1,37 @@
+sw_volume: 100
+audio_device_state:1:pulse audio
+audio_device_state:1:my_fifo
+state: stop
+current: 5
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+0:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/BEWITCHED（ARE YOU LEAVING SOON)～Non Stop Mix ver.～.mp3
+1:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/TAKE IT FROM ME～Non Stop Mix ver.～ [fLShDdg1Wok].mp3
+2:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/Modern Museum～Non Stop Mix ver.～.mp3
+3:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/オンナに熟して帰ってきな～Non Stop Mix ver.～.mp3
+4:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/ミステリー・ガール ～Non Stop Mix ver.～.mp3
+5:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/I KNOW PARADISE～Non Stop Mix ver.～.mp3
+6:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/恋するつもりになれば…～Non Stop Mix ver.～.mp3
+7:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/我がままなハイヒール～Non Stop Mix ver.～.mp3
+8:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/サンセット・ロード～Non Stop Mix ver.～.mp3
+9:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/SUNSHINE BRIGHT ON ME（CUB）～Non Stop Mix ver.～.mp3
+10:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/凍った太陽～Non Stop Mix ver.～.mp3
+11:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/LAZY DANCE～Non Stop Mix ver.～.mp3
+12:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/Hi-way 1～Non Stop Mix ver.～.mp3
+13:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/シャドウ・オブ・ザ・ナイト～Non Stop Mix ver.～.mp3
+14:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/カサノバ L～Non Stop Mix ver.～.mp3
+15:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/東京ジャズ・クラブ～Non Stop Mix ver.～.mp3
+16:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/Private fileは開けたままで・・・～Non Stop Mix ver.～.mp3
+17:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/ファッシネイション～Non Stop Mix ver.～.mp3
+18:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/Night Time～Non Stop Mix ver.～.mp3
+19:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/オール・アイ・エバー・ニード・イズ・ユー～Non Stop Mix ver.～.mp3
+20:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/Bad Luck September～Non Stop Mix ver.～.mp3
+21:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/WHAT A WOMAN FEELS INSIDE～Non Stop Mix ver.～ [O8VaTufpfEs].mp3
+22:DJ NOTOYA/Albums/TOKYO 1980s Victor Edition (The Alternate Mix) Boogie, Funk & Modern Soul from Japan -Non Stop Mix ver.-/エピローグにさようなら～Non Stop Mix ver.～.mp3
+playlist_end
