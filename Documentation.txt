@@ -1,0 +1,140 @@
+How To Install Arch Linux and My DE from start to finish.
+
+1. Connect to Internet.
+
+Type iwctl and type:
+
+station wlan0 connect (WLAN name), clear then exit.
+
+2. Update System Clock.
+
+Test connection first then type:
+
+timedatectl
+
+3. Disk Partitioning.
+
+mkfs.ext4 /dev/sda
+
+fdisk /dev/sda
+
+60GB for root, 8GB for swap and rest for home.
+
+mkfs.ext4 /dev/sda1
+
+mkswap /dev/sda2
+
+swapon /dev/sda2
+
+mkfs.ext4 /dev/sda3
+
+mount /dev/sda1 /mnt
+
+mkdir /mnt/home
+
+mount /dev/sda3 /mnt/home
+
+4. Install Essential Packages.
+
+pacstrap -K /mnt base linux-firmware linux-lts (or linux-zen) base-devel git grub sudo vim intel-ucode thermald tlp networkmanager
+
+5. Fstab.
+
+genfstab -U /mnt >> /mnt/etc/fstab
+
+6. Chroot.
+
+arch-chroot /mnt
+
+7. Time.
+
+ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
+
+hwclock --systohc
+
+8. Localization
+
+Edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8 and remember to GENERATE the locales by running:
+
+locale-gen
+
+Then, create /etc/locale.conf:
+
+LANG=en_US.UTF-8
+
+Then, set keyboard layout /etc/vconsole.conf:
+
+KEYMAP=jp106
+
+9. Network Configuration.
+
+Create the hostname file /etc/hostname
+
+archlinux
+
+10. Root Password and Creating User:
+
+Set the root password:
+
+passwd
+
+Then create new user:
+
+useradd -m -G wheel -s /bin/bash rei
+
+11. Install Bootloader:
+
+grub-install /dev/sda
+
+Then, generate bootloader:
+
+grub-mkconfig -o /boot/grub/grub.cfg
+
+12. Enabling Non-Root User to execute Sudo.
+
+EDITOR=vim visudo
+
+Search for %wheel and uncomment:
+
+%wheel ALL=(ALL:ALL) ALL
+
+13. Enabling 32-bit Support:
+
+Uncomment this section:
+
+[multilib]
+Include= /etc/pacman.d/mirrorlist
+
+14. All Done.
+
+Exit from chroot, type:
+
+umount -R /mnt
+
+Then reboot.
+
+AFTER INSTALL.
+
+1. After Copying SSH.
+
+chmod 600 ~/.ssh/id_rsa
+
+chmod 700 ~/.ssh
+
+2. Configuring Git.
+
+git config --global user.name "Muhammad Rifai"
+
+git config --global user.email "humanwhodebugs@gmail.com"
+
+3. Gayming.
+
+paru -S lutris lib32-mangohud mangohud
+
+paru -S wine-staging
+
+paru -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2-compat lib32-sdl2-compat
+
+WINEARCH=win64 WINEPREFIX=~/Wine winecfg
+
+All done.
