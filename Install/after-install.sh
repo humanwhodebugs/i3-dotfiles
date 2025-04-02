@@ -5,7 +5,15 @@ set -eu # Stop script if there's an error
 # Function for installing packages
 install_packages() {
   echo "Installing: $1"
-  paru -S -noconfirm --needed "${@:2}"
+  paru -S --noconfirm --needed "${@:2}"
+  echo "Done installing: $1"
+  echo "-----------------------------------"
+}
+
+# Function for installing packages
+install_dependencies() {
+  echo "Installing: $1"
+  paru -S --noconfirm --needed --asdeps "${@:2}"
   echo "Done installing: $1"
   echo "-----------------------------------"
 }
@@ -39,5 +47,11 @@ clone_repo "TPM" "https://github.com/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
 
 echo "3. Cloning Catppuccin Theme for Tmux (v2.1.2)..."
 clone_repo "Catppuccin Tmux Theme" "https://github.com/catppuccin/tmux.git" "$HOME/.tmux/plugins/catppuccin" "v2.1.2"
+
+echo "4. Installing Game Tools..."
+install_packages "Gaming Tools" lutris lib32-mangohud mangohud wine-staging
+
+echo "5. Installing Lutris Dependencies..."
+install_dependencies "Lutris Dependencies" giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2-compat lib32-sdl2-compat
 
 echo "All packages, dependencies, and plugins installed successfully!"
