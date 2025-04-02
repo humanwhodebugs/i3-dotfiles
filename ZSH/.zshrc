@@ -129,12 +129,11 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 # Huh?
 embed_cover() {
     cover=$(ls *.jpg | head -n 1)  # Ambil gambar JPG pertama di folder
     if [ -z "$cover" ]; then
-        echo "❌ Tidak ditemukan file cover.jpg atau gambar lainnya!"
+        echo "Cover.jpg not found!"
         return 1
     fi
 
@@ -148,11 +147,11 @@ embed_cover() {
         if [ $? -eq 0 ]; then  # Jika ffmpeg sukses
             rm "$file"  # Hapus file lama
             mv "$new_file" "$file"  # Ubah nama file baru agar tetap sama dengan yang lama
-            echo "✅ Berhasil menambahkan cover ke: $file"
+            echo "Successfully added cover to: $file"
         else
-            echo "❌ Gagal memproses: $file"
+            echo "Failed to process: $file"
         fi
     done
 
-    echo "🎵 Selesai! Semua lagu sekarang memiliki cover album."
+    echo "Done! Now all songs got cover album."
 }

@@ -13,7 +13,7 @@ install_packages() {
 }
 
 echo "1. Installing Starter Packages..."
-install_packages "Starter Packages" i3-wm vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch cheese zathura zathura-pdf-poppler papirus-folders-catppuccin-git nwg-look
+install_packages "Starter Packages" i3-wm vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch cheese zathura zathura-pdf-poppler papirus-folders-catppuccin-git nwg-look zsh
 
 echo "2. Installing Fonts..."
 install_packages "Fonts" noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd maplemono-ttf maplemono-nf-unhinted maplemono-nf-cn-unhinted
