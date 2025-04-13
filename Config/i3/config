@@ -10,7 +10,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 
 # Set Keyboard Layout To JP
-exec_always --no-startup-id setxkbmap -layout jp
+exec_always --no-startup-id setxkbmap -layout jp -option ctrl:nocaps
 
 # Start Polybar
 exec_always --no-startup-id killall -q polybar; polybar mybar

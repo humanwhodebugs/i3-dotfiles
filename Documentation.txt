@@ -137,4 +137,8 @@ paru -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib3
 
 WINEARCH=win64 WINEPREFIX=~/Wine winecfg
 
+Cloning from repo:
+
+git clone git@github.com:humanwhodebugs/repo-name.git
+
 All done.

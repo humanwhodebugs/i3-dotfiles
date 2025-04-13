@@ -104,6 +104,8 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cl="clear"
 alias cpugovernor="cat /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor"
+alias cdf="cd ~/Projects/Freelance/"
+alias cdp="cd ~/Projects/Personal/"
 alias download_album="yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-metadata --embed-thumbnail --write-info-json --write-thumbnail"
 alias download_vid="yt-dlp -f 'bestvideo[height=720]+bestaudio' --merge-output-format mp4"
 alias ff="fastfetch"
@@ -124,8 +126,8 @@ alias tm="tmux"
 alias tmks="tmux kill-server"
 alias tmls="tmux ls"
 alias x="exit"
-
 export NVM_DIR="$HOME/.nvm"
+
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
