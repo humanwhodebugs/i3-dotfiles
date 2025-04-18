@@ -1,8 +1,4 @@
-<div align="center">
 <h1 align="center"><b>i3 WM</b> - Dotfiles for Arch Linux (ThinkPad X230i)</h1>
-</div>
-
-## Getting Started
 
 ## Screenshots
 
