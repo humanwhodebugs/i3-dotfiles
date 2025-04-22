@@ -2,7 +2,14 @@
 
 set -eu # Stop script if there's an error
 
-echo "Welcome to Rei's dotfiles installer!"
+echo "╭───────────────────────────╮"
+echo "│       Rei Dotfiles        │"
+echo "│   Powered by Arch Linux   │"
+echo "╰───────────────────────────╯"
+
+echo "╭───────────────────────────╮"
+echo "│ Welcome to Install Script │"
+echo "╰───────────────────────────╯"
 
 # Function for installation
 install_packages() {
@@ -12,26 +19,43 @@ install_packages() {
   echo "-----------------------------------"
 }
 
-echo "1. Installing Starter Packages..."
+echo "╭─────────────────────────────╮"
+echo "│ Installing Starter Packages │"
+echo "╰─────────────────────────────╯"
 install_packages "Starter Packages" i3-wm vim ranger kitty imagemagick sddm xorg firefox rofi polybar dunst brightnessctl pavucontrol pulseaudio picom feh cava fuse fastfetch cheese zathura zathura-pdf-poppler papirus-folders-catppuccin-git nwg-look zsh
 
-echo "2. Installing Fonts..."
+echo "╭──────────────────╮"
+echo "│ Installing Fonts │"
+echo "╰──────────────────╯"
 install_packages "Fonts" noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd maplemono-ttf maplemono-nf-unhinted maplemono-nf-cn-unhinted
 
-echo "3. Installing Thunar File Manager Packages..."
+echo "╭─────────────────────────╮"
+echo "│ Installing File Manager │"
+echo "╰─────────────────────────╯"
 install_packages "Thunar Packages" thunar thunar-volman tumbler ffmpegthumbnailer file-roller thunar-archive-plugin gvfs gvfs-mtp android-tools android-udev mousepad p7zip unrar unzip
 
-echo "4. Installing SDDM Dependencies..."
+echo "╭──────────────────────────────╮"
+echo "│ Installing SDDM Dependencies │"
+echo "╰──────────────────────────────╯"
 install_packages "SDDM Dependencies" qt6-svg qt6-declarative qt5-quickcontrols2
 
-echo "5. Installing Screenshot and Screenrecord Dependencies..."
+echo "╭────────────────────────────────────────╮"
+echo "│ Installing Screenshot and Screenrecord │"
+echo "╰────────────────────────────────────────╯"
 install_packages "Screenshot Dependencies" maim xclip viewnior gpu-screen-recorder
 
-echo "6. Installing MPD and NCMPCPP..."
+echo "╭────────────────────────────╮"
+echo "│ Installing MPD and NCMPCPP │"
+echo "╰────────────────────────────╯"
 install_packages "MPD and NCMPCPP" mpd ncmpcpp mpc mpv-mpris fum-bin
 
-echo "Installation process completed successfully!"
+echo "╭──────────────────────────────────────────────╮"
+echo "│ Installation Process Completed Successfully! │"
+echo "╰──────────────────────────────────────────────╯"
 
-echo "Enabling and starting SDDM..."
+echo "╭────────────────────────────╮"
+echo "│ Enabling and Starting SDDM │"
+echo "╰────────────────────────────╯"
+
 sudo systemctl enable sddm
 sudo systemctl start sddm

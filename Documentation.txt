@@ -72,6 +72,8 @@ Then reboot.
 
 AFTER INSTALL.
 
+Remember to install ZSH and Node.js to install LSP for Neovim.
+
 Install paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
