@@ -1,273 +1,125 @@
-## Packages Needed for My System
-
-1. Pacstrap
-
-```bash
-pacstrap -K /mnt base linux-firmware linux-lts (or linux-zen) base-devel git grub sudo nano intel-ucode thermald tlp networkmanager
-```
-
-2. Enable multilib for 32bit Support
-
-```bash
-nano /etc/pacman.conf
-```
-
-Uncomment multilib section.
-
-3. Enabling NetworkManager, ThermalD and TLP
-
-```bash
-systemctl enable NetworkManager
-```
-
-```bash
-systemctl enable thermald
-```
-
-```bash
-systemctl enable tlp
-```
-
-## After Minimal Install
-
-1. Install Paru
-
-```bash
-git clone https://aur.archlinux.org/paru.git
-```
-
-```bash
-cd paru
-```
-
-```bash
-makepkg -si
-```
-
-2. Execute Install Script
-
-Change to clone directory.
-
-```bash
-chmod +x install-script.sh
-```
-
-```bash
-./install-script.sh
-```
-
-3. Execute After Install Script
-
-Change to clone directory.
-
-```bash
-chmod +x after-install.sh
-```
-
-```bash
-./after-install.sh
-```
-
-4. MPC, MPD and NCMPCPP Setup
-
-```bash
-mkdir ~/.mpd
-```
-
-```bash
-cd ~/.mpd
-```
-
-```bash
-touch mpd.db mpd.log mpd.pid
-```
-
-```bash
-mpd
-```
-
-```bash
-systemctl start mpd
-```
-
-```bash
-systemctl enable mpd
-```
-
-```bash
-systemctl --user enable mpd
-```
-
-5. Edit TLP
-
-```bash
-su
-```
-
-```bash
-vim /etc/tlp.conf
-```
-
-Change and uncomment battery and AC mode.
-
-```bash
-CPU_SCALING_GOVERNOR_ON_BAT=powersave
-CPU_SCALING_GOVERNOR_ON_AC=performance
-```
-
-Restart TLP
-
-```bash
-systemctl restart tlp
-```
-
-6. Change Folder Icons
-
-```bash
-papirus-folders -t Papirus -C cat-mocha-pink
-```
-
-How To Install Arch Linux and My DE from start to finish.
-
 1. Connect to Internet.
-
-Type iwctl and type:
-
-station wlan0 connect (WLAN name), clear then exit.
+Type iwctl and type: station wlan0 connect (WLAN name)
+Clear then exit.
 
 2. Update System Clock.
-
-Test connection first then type:
-
-timedatectl
+Test connection first then type: timedatectl
 
 3. Disk Partitioning.
-
 mkfs.ext4 /dev/sda
-
 fdisk /dev/sda
-
 60GB for root, 8GB for swap and rest for home.
-
 mkfs.ext4 /dev/sda1
-
 mkswap /dev/sda2
-
 swapon /dev/sda2
-
 mkfs.ext4 /dev/sda3
-
 mount /dev/sda1 /mnt
-
 mkdir /mnt/home
-
 mount /dev/sda3 /mnt/home
 
 4. Install Essential Packages.
-
 pacstrap -K /mnt base linux-firmware linux-lts (or linux-zen) base-devel git grub sudo vim intel-ucode thermald tlp networkmanager
 
 5. Fstab.
-
 genfstab -U /mnt >> /mnt/etc/fstab
 
 6. Chroot.
-
 arch-chroot /mnt
 
 7. Time.
-
-ln -sf /usr/share/zoneinfo/Region/City /etc/localtime
-
+ln -sf /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
 hwclock --systohc
 
 8. Localization
+Edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8 and remember to GENERATE the locales by running: locale-gen
 
-Edit /etc/locale.gen and uncomment en_US.UTF-8 UTF-8 and remember to GENERATE the locales by running:
+Then, create /etc/locale.conf: LANG=en_US.UTF-8
 
-locale-gen
-
-Then, create /etc/locale.conf:
-
-LANG=en_US.UTF-8
-
-Then, set keyboard layout /etc/vconsole.conf:
-
-KEYMAP=jp106
+Then, set keyboard layout /etc/vconsole.conf: KEYMAP=jp106
 
 9. Network Configuration.
-
-Create the hostname file /etc/hostname
-
-archlinux
+Create the hostname file /etc/hostname: archlinux
 
 10. Root Password and Creating User:
+Set the root password: passwd
+Then create new user: useradd -m -G wheel -s /bin/bash rei
+Set password for user: passwd rei
 
-Set the root password:
-
-passwd
-
-Then create new user:
-
-useradd -m -G wheel -s /bin/bash rei
-
-11. Install Bootloader:
-
-grub-install /dev/sda
-
-Then, generate bootloader:
-
-grub-mkconfig -o /boot/grub/grub.cfg
-
-12. Enabling Non-Root User to execute Sudo.
-
+11. Enabling Non-Root User to execute Sudo.
 EDITOR=vim visudo
 
 Search for %wheel and uncomment:
-
 %wheel ALL=(ALL:ALL) ALL
 
-13. Enabling 32-bit Support:
-
+12. Enabling 32-bit Support:
 Uncomment this section:
-
 [multilib]
 Include= /etc/pacman.d/mirrorlist
 
-14. All Done.
+13. Install Bootloader:
+grub-install /dev/sda
+Then, generate bootloader: grub-mkconfig -o /boot/grub/grub.cfg
 
-Exit from chroot, type:
+14. Enable TLP, ThermalD and NetworkManager
+Type:
+systemctl enable thermal
+systemctl enable tlp
+systemctl enable NetworkManager
 
-umount -R /mnt
-
+15. All Done.
+Exit from chroot, type: umount -R /mnt
 Then reboot.
 
 AFTER INSTALL.
 
+Install paru
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+
 1. After Copying SSH.
-
 chmod 600 ~/.ssh/id_rsa
-
 chmod 700 ~/.ssh
 
 2. Configuring Git.
-
 git config --global user.name "Muhammad Rifai"
-
 git config --global user.email "humanwhodebugs@gmail.com"
 
-3. Gayming.
+3. MPD and NCMPCPP Setup.
+mkdir ~/.mpd
+cd ~/.mpd
+touch mpd.db mpd.log mpd.pid
+mpd
+systemctl start mpd
+systemctl enable mpd
+systemctl --user enable mpd
 
-paru -S lutris lib32-mangohud mangohud
+4. Change Folder Icons
+papirus-folders -t Papirus -C cat-mocha-pink
 
-paru -S wine-staging
+5. TLP Setup.
+vim /etc/tlp.conf
 
-paru -S --needed --asdeps giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2-compat lib32-sdl2-compat
+Uncomment this section:
+CPU_SCALING_GOVERNOR_ON_BAT=powersave
+CPU_SCALING_GOVERNOR_ON_AC=performance
 
+systemctl restart tlp
+
+6. Kernel
+sudo nano /etc/default/grub
+
+Change this section:
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet rd.system.show_status=auto rd.udev.log_priority=3 mitigations=off noibrs noibpb nopti nospectre_v2 l1tf=off zswap.enabled=1 zswap.compressor=lz4 zswap.max_pool_percent=20 elevator=bfq io_uring=1"
+
+Update GRUB by typing: sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+Then reboot.
+
+7. Gayming.
 WINEARCH=win64 WINEPREFIX=~/Wine winecfg
 
-Cloning from repo:
-
+8. Cloning from repo:
 git clone git@github.com:humanwhodebugs/repo-name.git
 
 All done.
