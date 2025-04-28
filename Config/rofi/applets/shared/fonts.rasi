@@ -8,5 +8,5 @@
  **/
 
 * {
-    font: "Maple Mono 10";
+    font: "Cascadia Code NF 10";
 }

@@ -27,7 +27,7 @@ install_packages "Starter Packages" i3-wm vim ranger kitty imagemagick sddm xorg
 echo "╭──────────────────╮"
 echo "│ Installing Fonts │"
 echo "╰──────────────────╯"
-install_packages "Fonts" noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd maplemono-ttf maplemono-nf-unhinted maplemono-nf-cn-unhinted
+install_packages "Fonts" noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd
 
 echo "╭─────────────────────────╮"
 echo "│ Installing File Manager │"
