@@ -51,17 +51,26 @@ clone_repo() {
 echo "╭──────────────────────────────╮"
 echo "│ Installing Development Tools │"
 echo "╰──────────────────────────────╯"
-install_packages "Development Tools" neovim lazygit httpie tmux
+install_packages "Development Tools" neovim lazygit httpie tmux zsh-theme-powerlevel10k-git
 
 echo "╭─────────────╮"
 echo "│ Cloning TPM │"
 echo "╰─────────────╯"
 clone_repo "TPM" "https://github.com/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
 
-echo "╭─────────────────────────────────╮"
-echo "│ Cloning Powerlevel10k ZSH Theme │"
-echo "╰─────────────────────────────────╯"
-clone_repo "Powerlevel10k" "https://github.com/romkatv/powerlevel10k.git" "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+echo "╭────────────────────────────────╮"
+echo "│ Cloning ranger_devicons Plugin │"
+echo "╰────────────────────────────────╯"
+clone_repo "ranger_devicons" "https://github.com/alexanderjeurissen/ranger_devicons" "$HOME/.config/ranger/plugins/ranger_devicons"
+
+# Add 'default_linemode devicons' to rc.conf if not already present
+RANGER_RC="$HOME/.config/ranger/rc.conf"
+if ! grep -q "default_linemode devicons" "$RANGER_RC"; then
+  echo "default_linemode devicons" >>"$RANGER_RC"
+  echo "Added 'default_linemode devicons' to $RANGER_RC"
+else
+  echo "'default_linemode devicons' already exists in $RANGER_RC"
+fi
 
 echo "╭───────────────────────────────╮"
 echo "│ Cloning Catppuccin Tmux Theme │"
