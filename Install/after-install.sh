@@ -58,6 +58,11 @@ echo "│ Cloning TPM │"
 echo "╰─────────────╯"
 clone_repo "TPM" "https://github.com/tmux-plugins/tpm" "$HOME/.tmux/plugins/tpm"
 
+echo "╭─────────────────────────────────╮"
+echo "│ Cloning Powerlevel10k ZSH Theme │"
+echo "╰─────────────────────────────────╯"
+clone_repo "Powerlevel10k" "https://github.com/romkatv/powerlevel10k.git" "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k"
+
 echo "╭───────────────────────────────╮"
 echo "│ Cloning Catppuccin Tmux Theme │"
 echo "╰───────────────────────────────╯"
