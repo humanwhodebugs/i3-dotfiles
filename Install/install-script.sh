@@ -16,7 +16,6 @@ install_packages() {
   echo "Installing: $1"
   paru -S --noconfirm --needed "${@:2}"
   echo "Done installing: $1"
-  echo "-----------------------------------"
 }
 
 echo "╭─────────────────────────────╮"
@@ -27,7 +26,7 @@ install_packages "Starter Packages" i3-wm vim ranger kitty imagemagick sddm xorg
 echo "╭──────────────────╮"
 echo "│ Installing Fonts │"
 echo "╰──────────────────╯"
-install_packages "Fonts" noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd ttf-cascadia-code ttf-cascadia-code-nerd ttf-cascadia-mono-nerd
+install_packages "Fonts" noto-fonts-emoji noto-fonts-cjk noto-fonts-extra ttf-jetbrains-mono ttf-jetbrains-mono-nerd
 
 echo "╭─────────────────────────╮"
 echo "│ Installing File Manager │"

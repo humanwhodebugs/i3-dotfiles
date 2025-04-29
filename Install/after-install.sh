@@ -16,7 +16,6 @@ install_packages() {
   echo "Installing: $1"
   paru -S --noconfirm --needed "${@:2}"
   echo "Done installing: $1"
-  echo "-----------------------------------"
 }
 
 # Function for installing dependencies
@@ -24,7 +23,6 @@ install_dependencies() {
   echo "Installing: $1"
   paru -S --noconfirm --needed --asdeps "${@:2}"
   echo "Done installing: $1"
-  echo "-----------------------------------"
 }
 
 # Function to clone a git repository if it doesn't exist
@@ -45,7 +43,6 @@ clone_repo() {
   else
     echo "$name already cloned in $dest_dir"
   fi
-  echo "-----------------------------------"
 }
 
 echo "╭──────────────────────────────╮"
