@@ -48,6 +48,28 @@ echo "│ Installing MPD and NCMPCPP │"
 echo "╰────────────────────────────╯"
 install_packages "MPD and NCMPCPP" mpd ncmpcpp mpc mpv-mpris fum-bin
 
+echo "╭──────────────────────╮"
+echo "│ Copying Config Files │"
+echo "╰──────────────────────╯"
+
+CONFIG_SOURCE="./Config"
+CONFIG_TARGET="$HOME/.config"
+BACKUP_DIR="$HOME/Config-Backup-$(date +%Y%m%d_%H%M%S)"
+
+if [ -d "$CONFIG_TARGET" ]; then
+  echo "Found existing ~/.config, moving it to backup: $BACKUP_DIR"
+  mv "$CONFIG_TARGET" "$BACKUP_DIR"
+else
+  echo "No existing ~/.config found, no need to backup."
+fi
+
+mkdir -p "$CONFIG_TARGET"
+
+echo "Copying new configs from $CONFIG_SOURCE to $CONFIG_TARGET"
+cp -r "$CONFIG_SOURCE"/. "$CONFIG_TARGET"
+
+echo "Dotfiles configuration successfully applied!"
+
 echo "╭──────────────────────────────────────────────╮"
 echo "│ Installation Process Completed Successfully! │"
 echo "╰──────────────────────────────────────────────╯"

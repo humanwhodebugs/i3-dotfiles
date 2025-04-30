@@ -84,6 +84,36 @@ echo "│ Installing Lutris Dependencies │"
 echo "╰────────────────────────────────╯"
 install_dependencies "Lutris Dependencies" giflib lib32-giflib gnutls lib32-gnutls v4l-utils lib32-v4l-utils libpulse lib32-libpulse alsa-plugins lib32-alsa-plugins alsa-lib lib32-alsa-lib sqlite lib32-sqlite libxcomposite lib32-libxcomposite ocl-icd lib32-ocl-icd libva lib32-libva gtk3 lib32-gtk3 gst-plugins-base-libs lib32-gst-plugins-base-libs vulkan-icd-loader lib32-vulkan-icd-loader sdl2-compat lib32-sdl2-compat
 
+echo "╭──────────────────────╮"
+echo "│ Copying Config Files │"
+echo "╰──────────────────────╯"
+
+CONFIG_SOURCE="./Home"
+CONFIG_TARGET="$HOME"
+
+# Copy
+echo "Copying new configs from $CONFIG_SOURCE to $CONFIG_TARGET"
+cp -r "$CONFIG_SOURCE"/. "$CONFIG_TARGET"
+
+echo "Dotfiles configuration applied!"
+
+echo "╭────────────────────────────╮"
+echo "│ Setting up MPD and NCMPCPP │"
+echo "╰────────────────────────────╯"
+
+mkdir -p "$HOME/Music"
+touch "$HOME/.mpd/mpd.db" "$HOME/.mpd/mpd.log" "$HOME/.mpd/mpd.pid"
+
+echo "Starting MPD service..."
+mpd || echo "MPD might already be running, continuing..."
+
+echo "Enabling MPD service..."
+sudo systemctl enable mpd
+sudo systemctl start mpd
+systemctl --user enable mpd.service
+
+echo "MPD setup completed!"
+
 echo "╭────────────────────────────────────────────────────────────────╮"
 echo "│ All packages, dependencies and plugins installed successfully! │"
 echo "│                     Enjoy your system!                         │"
