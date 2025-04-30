@@ -3,7 +3,7 @@
 set $mod Mod4
 
 # Font For Window Titles. Will Also Be Used By The Bar Unless A Different Font
-font pango:Cascadia Code NF 10
+font pango:JetBrains Mono Nerd Font 10
 
 # Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%

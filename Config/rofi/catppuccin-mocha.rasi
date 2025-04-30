@@ -9,7 +9,7 @@
     grey: #6c7086;
 
     width: 600;
-    font: "Cascadia Code NF 12";
+    font: "JetBrains Mono Nerd Font 12";
 }
 
 element-text, element-icon , mode-switcher {
