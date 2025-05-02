@@ -74,6 +74,19 @@ AFTER INSTALL.
 
 Remember to install ZSH and Node.js to install LSP for Neovim.
 
+Activate ArchLinuxCN Repo:
+Edit repo file: sudo vim /etc/pacman.conf
+
+Add this line to EOF:
+[archlinuxcn]
+Server = https://repo.archlinuxcn.org/$arch
+
+Update database:
+sudo pacman -Sy
+
+Install keyring:
+sudo pacman -S archlinuxcn-keyring
+
 Install paru
 git clone https://aur.archlinux.org/paru.git
 cd paru
@@ -123,5 +136,30 @@ WINEARCH=win64 WINEPREFIX=~/Wine winecfg
 
 8. Cloning from repo:
 git clone git@github.com:humanwhodebugs/repo-name.git
+
+9. systemd-analyze Optimization
+
+Check boot time first:
+systemd-analyze blame
+
+Then disable few things:
+
+- Flush Service
+sudo vim /etc/systemd/journald.conf
+Edit this line:
+Storage=volatile
+Then:
+sudo systemctl restart systemd-journald
+
+- home.mount and dev-sda1.service:
+sudo vim /etc/fstab
+Edit this line:
+UUID=xxxxx  /      ext4  rw,realtime  0 1
+UUID=xxxxx  /home  ext4  rw,realtime  0 2
+To:
+UUID=xxxxx  /      ext4  rw,noatime  0 1
+UUID=xxxxx  /home  ext4  rw,noatime  0 2
+
+Then reboot system.
 
 All done.

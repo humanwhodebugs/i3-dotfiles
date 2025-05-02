@@ -21,10 +21,10 @@ else
     mesg="No Music Playing"
   elif [[ "$status" == *"[paused]"* ]]; then
     prompt="Music Player"
-    mesg="$(mpc -f "%artist%" current) - $(mpc -f "%title%" current)"
+    mesg="$(mpc -f "%title%" current)"
   else
     prompt="Music Player"
-    mesg="$(mpc -f "%artist%" current) - $(mpc -f "%title%" current)"
+    mesg="$(mpc -f "%title%" current)"
   fi
 fi
 

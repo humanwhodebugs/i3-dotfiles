@@ -77,7 +77,7 @@ clone_repo "Catppuccin Tmux Theme" "https://github.com/catppuccin/tmux.git" "$HO
 echo "╭─────────────────────────╮"
 echo "│ Installing Gaming Tools │"
 echo "╰─────────────────────────╯"
-install_packages "Gaming Tools" lutris lib32-mangohud mangohud wine-staging
+install_packages "Gaming Tools" lib32-mangohud mangohud wine-staging
 
 echo "╭────────────────────────────────╮"
 echo "│ Installing Lutris Dependencies │"

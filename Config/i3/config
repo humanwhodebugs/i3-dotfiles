@@ -3,7 +3,7 @@
 set $mod Mod4
 
 # Font For Window Titles. Will Also Be Used By The Bar Unless A Different Font
-font pango:JetBrains Mono Nerd Font 10
+font pango:Maple Mono NF 10
 
 # Brightness Control
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl s +5%
@@ -13,7 +13,15 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl s 5%-
 exec_always --no-startup-id setxkbmap -layout jp -option ctrl:nocaps
 
 # Start Polybar
-exec_always --no-startup-id killall -q polybar; polybar mybar
+# exec_always --no-startup-id killall -q polybar; polybar mybar
+exec --no-startup-id ~/.config/polybar/polybar.sh floating
+
+# Change Polybar Style
+bindsym $mod+F1 exec --no-startup-id ~/.config/polybar/polybar.sh floating
+bindsym $mod+F2 exec --no-startup-id ~/.config/polybar/polybar.sh full
+
+# Wallpaper
+bindsym $mod+Shift+n exec --no-startup-id ~/.config/i3/wallpaper.sh
 
 # Music Applet
 bindsym $mod+Shift+m exec --no-startup-id ~/.config/rofi/applets/bin/mpd.sh
@@ -208,8 +216,8 @@ exec --no-startup-id ~/.config/i3/dpms-manager.sh
 
 # Gaps Config
 gaps inner 5
-gaps outer 0
-gaps top 35
+gaps outer 3
+gaps top 40
 
 # Picom
 exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
